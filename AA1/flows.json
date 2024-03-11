@@ -1,0 +1,378 @@
+[
+    {
+        "id": "fb9d3e94575d3647",
+        "type": "mqtt in",
+        "z": "b7884767cf9dc8df",
+        "name": "",
+        "topic": "humValue",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "ac6659385df72324",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 200,
+        "wires": [
+            [
+                "15ec02c7211d089d",
+                "d4fa0120af5f2566"
+            ]
+        ]
+    },
+    {
+        "id": "e424113596247854",
+        "type": "mqtt in",
+        "z": "b7884767cf9dc8df",
+        "name": "",
+        "topic": "tempValue",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "ac6659385df72324",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 260,
+        "wires": [
+            [
+                "d4fa0120af5f2566",
+                "8add864e22cd9b70"
+            ]
+        ]
+    },
+    {
+        "id": "34f3570d89a5b5c1",
+        "type": "mqtt in",
+        "z": "b7884767cf9dc8df",
+        "name": "",
+        "topic": "phValue",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "ac6659385df72324",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 320,
+        "wires": [
+            [
+                "d4fa0120af5f2566",
+                "fd6e095031e8118e"
+            ]
+        ]
+    },
+    {
+        "id": "6d5326b3393954ae",
+        "type": "mqtt in",
+        "z": "b7884767cf9dc8df",
+        "name": "",
+        "topic": "tdsValue",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "ac6659385df72324",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 380,
+        "wires": [
+            [
+                "d4fa0120af5f2566",
+                "19b55611f023abc0"
+            ]
+        ]
+    },
+    {
+        "id": "19b55611f023abc0",
+        "type": "ui_gauge",
+        "z": "b7884767cf9dc8df",
+        "name": "",
+        "group": "3125ee5a8ea0abc1",
+        "order": 3,
+        "width": "5",
+        "height": "3",
+        "gtype": "gage",
+        "title": "TDS",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 350,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "fd6e095031e8118e",
+        "type": "ui_gauge",
+        "z": "b7884767cf9dc8df",
+        "name": "",
+        "group": "3125ee5a8ea0abc1",
+        "order": 2,
+        "width": "5",
+        "height": "3",
+        "gtype": "gage",
+        "title": "PH",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "14",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 350,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "8add864e22cd9b70",
+        "type": "ui_gauge",
+        "z": "b7884767cf9dc8df",
+        "name": "",
+        "group": "3125ee5a8ea0abc1",
+        "order": 1,
+        "width": "5",
+        "height": "3",
+        "gtype": "gage",
+        "title": "Temperature",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-40",
+        "max": "80",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 370,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "15ec02c7211d089d",
+        "type": "ui_gauge",
+        "z": "b7884767cf9dc8df",
+        "name": "",
+        "group": "3125ee5a8ea0abc1",
+        "order": 0,
+        "width": "5",
+        "height": "3",
+        "gtype": "gage",
+        "title": "Humidity",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "0",
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 360,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "d4fa0120af5f2566",
+        "type": "join",
+        "z": "b7884767cf9dc8df",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "10",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 350,
+        "y": 320,
+        "wires": [
+            [
+                "13495b61e7dd2e55"
+            ]
+        ]
+    },
+    {
+        "id": "0668ed324356fd9d",
+        "type": "ui_table",
+        "z": "b7884767cf9dc8df",
+        "group": "d7add96eb24337e9",
+        "name": "Data Table",
+        "order": 1,
+        "width": "20",
+        "height": "5",
+        "columns": [
+            {
+                "field": "timeStamp",
+                "title": "Time Stamp",
+                "width": "30%",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "tempValue",
+                "title": "Temperature",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "phValue",
+                "title": "PH",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "tdsValue",
+                "title": "TDS",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "humValue",
+                "title": "Humidity",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 710,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "13495b61e7dd2e55",
+        "type": "function",
+        "z": "b7884767cf9dc8df",
+        "name": "AddToArray",
+        "func": "var tableData = flow.get(\"savedData\") || []\n\nmsg.payload[\"timeStamp\"] = new Date().toLocaleString()\n\ntableData.unshift( msg.payload)\n\nmsg.payload = tableData\n\nflow.set(\"savedData\", tableData)\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\nflow.set(\"savedData\", [])",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 260,
+        "wires": [
+            [
+                "0668ed324356fd9d"
+            ]
+        ]
+    },
+    {
+        "id": "ac6659385df72324",
+        "type": "mqtt-broker",
+        "name": "C140",
+        "broker": "broker.emqx.io",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "3125ee5a8ea0abc1",
+        "type": "ui_group",
+        "name": "Guages",
+        "tab": "d3fb97e7a614c68d",
+        "order": 1,
+        "disp": true,
+        "width": "20",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "d7add96eb24337e9",
+        "type": "ui_group",
+        "name": "Data Table",
+        "tab": "d3fb97e7a614c68d",
+        "order": 2,
+        "disp": true,
+        "width": "20",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d3fb97e7a614c68d",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
